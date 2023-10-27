@@ -8,6 +8,7 @@ on:
 jobs:
   run-ci:
     runs-on: ubuntu-latest
+    working-directory: js/
 
     steps:
     - name: Checkout repository
@@ -17,9 +18,6 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '16.x'
-
-    - name: Change to project directory
-      run: cd ${{ github.workspace }}/js
 
     - name: List diretory
       run: ls -la
