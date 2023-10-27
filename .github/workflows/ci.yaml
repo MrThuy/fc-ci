@@ -18,6 +18,9 @@ jobs:
       with:
         node-version: '16.x'
 
+    - name: Change to project directory
+      run: cd ${{ github.workspace }}/js
+
     - name: List diretory
       run: ls -la
 
