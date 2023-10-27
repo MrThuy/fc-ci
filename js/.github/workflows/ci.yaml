@@ -18,9 +18,6 @@ jobs:
       with:
         node-version: '16.x'
 
-    - name: Change to project directory
-      run: cd ./js/
-
     - name: List diretory
       run: ls -la
 
