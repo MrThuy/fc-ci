@@ -18,9 +18,7 @@ jobs:
         node-version: '14.x'
 
     - name: Install dependencies
-      run: cd js\
-      run: npm install
+      run: cd js\ && npm install
 
     - name: Run tests
-      run: cd js\
-      run: npm test
+      run: cd js\ && npm test
