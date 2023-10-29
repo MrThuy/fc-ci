@@ -1,16 +1,16 @@
-name: ci-nodejs-workflow
+name: run-CI
 
 on:
   pull_request:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
-  check-application:
+  run-CI:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repo
+      uses: actions/checkout@v2
 
     - name: Use Node.js 14.x
       uses: actions/setup-node@v2
@@ -18,7 +18,7 @@ jobs:
         node-version: '14.x'
 
     - name: Install dependencies
-      run: npm install
+      run: cd js && npm install
 
     - name: Run tests
-      run: npm test
+      run: cd js && npm test
